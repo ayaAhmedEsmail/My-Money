@@ -1,18 +1,15 @@
-package com.example.mymoney
+package com.example.mymoney.login
 
 
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.content.Intent
-import android.content.SharedPreferences
-import android.widget.Button
 import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
+import com.example.mymoney.MainActivity
+import com.example.mymoney.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_log_in.*
 import kotlinx.android.synthetic.main.activity_register.*
@@ -25,7 +22,7 @@ class LogInActivity : AppCompatActivity() {
 
         txt_registration.setOnClickListener {
 
-            val intent =Intent(this,RegisterActivity::class.java)
+            val intent =Intent(this, RegisterActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -64,7 +61,7 @@ class LogInActivity : AppCompatActivity() {
                                             Toast.LENGTH_LONG
                                     ).show()
 
-                                    val intent =Intent(this,MainActivity::class.java)
+                                    val intent =Intent(this, MainActivity::class.java)
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("user_id",FirebaseAuth.getInstance().currentUser!!.uid)
                                     intent.putExtra("email_id",mail)
@@ -88,7 +85,7 @@ class LogInActivity : AppCompatActivity() {
 
         // Forget password
         txtForgetPassword.setOnClickListener {
-            val intent =Intent(this,ForgotPasswordActivity::class.java)
+            val intent =Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
             finish()
         }
