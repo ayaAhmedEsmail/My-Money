@@ -19,4 +19,8 @@
     <string name="Submit">submit</string>
     <string name="forget_password">forget password</string>
     <string name="total_Balance">Total Balance</string>
+    <string name="label">Label</string>
+    <string name="amount">Amount</string>
+    <string name="dec">Description</string>
+    <string name="transaction">Add Transaction</string>
 </resources>

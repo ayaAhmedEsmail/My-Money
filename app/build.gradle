@@ -3,8 +3,9 @@ plugins {
     id 'kotlin-android'
     id 'com.google.gms.google-services'
     id 'kotlin-android-extensions'
-}
 
+}
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
@@ -39,6 +40,7 @@ android {
 }
 
 dependencies {
+    def roomVersion = "2.4.1"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -65,5 +67,13 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottieVersion"
     // data binding
     implementation 'com.android.databinding:compiler:3.5.1'
+
+    //room
+
+        implementation("androidx.room:room-runtime:$roomVersion")
+        annotationProcessor("androidx.room:room-compiler:$roomVersion")
+
+        // To use Kotlin annotation processing tool (kapt)
+        kapt("androidx.room:room-compiler:$roomVersion")
 
 }

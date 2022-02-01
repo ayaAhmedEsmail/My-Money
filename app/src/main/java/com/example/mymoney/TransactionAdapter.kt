@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.transaction_layout.view.*
 
-class TransactionAdapter(private  val transaction:ArrayList<Transaction>):
+class TransactionAdapter(private var transaction:List<Transaction>):
         RecyclerView.Adapter<TransactionAdapter.TransactionViewHolder>() {
 
     class TransactionViewHolder(view: View):RecyclerView.ViewHolder(view){
@@ -40,5 +40,10 @@ class TransactionAdapter(private  val transaction:ArrayList<Transaction>):
 
     override fun getItemCount(): Int {
         return  transaction.size
+    }
+
+    fun setData(transaction: List<Transaction>){
+        this.transaction=transaction
+        notifyDataSetChanged()
     }
 }
