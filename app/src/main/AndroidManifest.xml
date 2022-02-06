@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMoney">
-        <activity android:name=".AddTransactionActivity">
-
-        </activity>
+        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".AddTransactionActivity"></activity>
         <activity android:name=".login.ForgotPasswordActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
