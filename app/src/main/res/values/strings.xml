@@ -18,10 +18,12 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="Submit">submit</string>
     <string name="forget_password">forget password</string>
-    <string name="total_Balance">Total Balance</string>
+    <string name="total_Balance">My Wallet</string>
     <string name="label">Label</string>
     <string name="amount">Amount</string>
     <string name="dec">Description</string>
     <string name="transaction">Add Transaction</string>
     <string name="updateTransaction">Update Transaction</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>

@@ -3,6 +3,8 @@ package com.example.mymoney
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.room.Room
+import com.example.mymoney.Room.AppDB
+import com.example.mymoney.Room.Transaction
 import kotlinx.android.synthetic.main.activity_add_transaction.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -36,7 +38,7 @@ class AddTransactionActivity : AppCompatActivity() {
     }
 
     private fun insert(transaction: Transaction){
-        val  db:AppDB = Room.databaseBuilder(this,AppDB::class.java,"transition").build()
+        val  db: AppDB = Room.databaseBuilder(this, AppDB::class.java,"transition").build()
 
        GlobalScope.launch{
             db.transactionDao().insertAll(transaction)

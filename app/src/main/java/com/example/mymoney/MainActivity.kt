@@ -3,12 +3,19 @@ package com.example.mymoney
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
+import com.example.mymoney.Room.AppDB
+import com.example.mymoney.Room.Transaction
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
@@ -24,9 +31,34 @@ class MainActivity : AppCompatActivity() {
     private lateinit var db: AppDB
     private lateinit var deletedTransaction: Transaction
 
+    lateinit var toggle: ActionBarDrawerToggle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val drawerLayout: DrawerLayout = findViewById(R.id.coordinator)
+        val navView:NavigationView= findViewById(R.id.nav_view)
+
+        toggle= ActionBarDrawerToggle(this, drawerLayout,R.string.nav_open,R.string.nav_close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.nav_reminder -> Toast.makeText(applicationContext,"Reminder",Toast.LENGTH_LONG).show()
+                R.id.nav_home -> {
+                    Toast.makeText(applicationContext,"Home Page",Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+
+            }
+            true
+        }
+
+
 
         transaction = arrayListOf()
 
@@ -139,4 +171,8 @@ class MainActivity : AppCompatActivity() {
         fetchAll()
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) return true
+        return super.onOptionsItemSelected(item)
+    }
 }

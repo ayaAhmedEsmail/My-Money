@@ -7,13 +7,10 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.core.widget.addTextChangedListener
 import androidx.room.Room
-import com.example.mymoney.R
-import kotlinx.android.synthetic.main.activity_add_transaction.*
-import kotlinx.android.synthetic.main.activity_add_transaction.amount_Input
+import com.example.mymoney.Room.AppDB
+import com.example.mymoney.Room.Transaction
 import kotlinx.android.synthetic.main.activity_add_transaction.amount_layout
 import kotlinx.android.synthetic.main.activity_add_transaction.btn_back
-import kotlinx.android.synthetic.main.activity_add_transaction.dec_Input
-import kotlinx.android.synthetic.main.activity_add_transaction.label_Input
 import kotlinx.android.synthetic.main.activity_add_transaction.label_layout
 import kotlinx.android.synthetic.main.activity_detailes.*
 import kotlinx.coroutines.GlobalScope

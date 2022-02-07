@@ -1,6 +1,7 @@
-package com.example.mymoney
+package com.example.mymoney.Room
 
 import androidx.room.*
+import com.example.mymoney.Room.Transaction
 
 @Dao
 interface TransactionDao {

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mymoney.Room.Transaction
 import kotlinx.android.synthetic.main.transaction_layout.view.*
 
 class TransactionAdapter(private var transaction:List<Transaction>):
@@ -26,7 +27,7 @@ class TransactionAdapter(private var transaction:List<Transaction>):
     }
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
-        val transaction:Transaction = transaction[position]
+        val transaction: Transaction = transaction[position]
         val context:Context =holder.amount.context
 
         if(transaction.amount >=0 ){
