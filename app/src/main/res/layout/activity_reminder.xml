@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReminderActivity">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/blue_white"
+       android:orientation="vertical"
+       android:paddingTop="20dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:background="@drawable/ic_baseline_arrow_back_24"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="12dp"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reminders"
+        android:layout_margin="10dp"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:textColor="@color/black"/>
+</LinearLayout>
+
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@drawable/whitebg"
+           android:padding="10dp"
+           app:cardCornerRadius="15dp"
+           android:layout_margin="10dp">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:padding="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:weightSum="3">
+                   <TextView
+                       android:id="@+id/txt_morningReminder"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:layout_height="wrap_content"
+                       android:text="@string/morning_reminder"
+                       android:textColor="@color/black"
+                       />
+                   <Switch
+                       android:id="@+id/btn_switchMorning"
+                       android:layout_weight="1"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:switchMinWidth="56dp"
+                       android:layout_marginLeft="10dp"
+                       android:checked="true"
+                       android:textOff="OFF"
+                       android:textOn="ON"/>
+               </LinearLayout>
+
+               <View
+               android:id="@+id/view1"
+               android:layout_width="fill_parent"
+               android:layout_height="1dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               android:background="@color/gray" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:weightSum="3">
+                   <TextView
+                       android:id="@+id/txt_reminderMeAt"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:layout_height="wrap_content"
+                       android:text="@string/reminder_me"
+                       android:textColor="@color/black"
+                       />
+                   <TextView
+                       android:id="@+id/txt_reminderTime"
+                       android:layout_weight="1"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:text="8:00 AM "
+                       android:gravity="right" />
+               </LinearLayout>
+
+           </LinearLayout>
+       </androidx.cardview.widget.CardView>
+       <Space
+           android:layout_width="match_parent"
+           android:layout_height="25dp"
+           />
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@drawable/whitebg"
+           android:padding="10dp"
+           app:cardCornerRadius="15dp"
+           android:layout_margin="10dp">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:padding="10dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:weightSum="3">
+                   <TextView
+                       android:id="@+id/txt_eveningReminder"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:layout_height="wrap_content"
+                       android:text="@string/evening_reminder"
+                       android:textColor="@color/black"
+                       />
+                   <Switch
+                       android:id="@+id/btn_switchEvening"
+                       android:layout_weight="1"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:switchMinWidth="56dp"
+                       android:layout_marginLeft="10dp"
+                       android:checked="true"
+                       android:textOff="OFF"
+                       android:textOn="ON"/>
+               </LinearLayout>
+
+               <View
+               android:id="@+id/view2"
+               android:layout_width="fill_parent"
+               android:layout_height="1dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               android:background="@color/gray" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:weightSum="3">
+                   <TextView
+                       android:id="@+id/txt_reminderMeAtvening"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:layout_height="wrap_content"
+                       android:text="@string/reminder_me"
+                       android:textColor="@color/black"
+                       />
+                   <TextView
+                       android:id="@+id/txt_reminderTimeEvening"
+                       android:layout_weight="1"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:text="8:00 AM"
+                       android:gravity="right"                       />
+               </LinearLayout>
+
+           </LinearLayout>
+       </androidx.cardview.widget.CardView>
+
+   </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

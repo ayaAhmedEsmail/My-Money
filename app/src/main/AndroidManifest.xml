@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mymoney">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,15 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMoney">
-        <activity android:name=".DetailsActivity"></activity>
-        <activity android:name=".AddTransactionActivity"></activity>
+        <activity android:name=".ReminderActivity"
+            android:label="@string/reminder">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".AddTransactionActivity" />
         <activity android:name=".login.ForgotPasswordActivity" />
         <activity android:name=".SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".login.LogInActivity" />
         <activity android:name=".MainActivity" />
