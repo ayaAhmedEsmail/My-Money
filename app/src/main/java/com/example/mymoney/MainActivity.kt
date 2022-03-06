@@ -47,7 +47,11 @@ class MainActivity : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.nav_reminder -> Toast.makeText(applicationContext,"Reminder",Toast.LENGTH_LONG).show()
+                R.id.nav_reminder -> {
+                    Toast.makeText(applicationContext, "Reminder Page", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, ReminderActivity::class.java)
+                    startActivity(intent)
+                }
                 R.id.nav_home -> {
                     Toast.makeText(applicationContext,"Home Page",Toast.LENGTH_LONG).show()
                     val intent = Intent(this, MainActivity::class.java)
@@ -70,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         rcy_budget.apply {
             adapter = transactionAdapter
             layoutManager = linearLayoutManager
+
         }
 
         //swipe to delete
@@ -96,6 +101,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddTransactionActivity::class.java)
             startActivity(intent)
         }
+       // handleRecyclerViewState(rcy_budget)
 
 
     }
@@ -155,7 +161,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+ /* private fun handleRecyclerViewState(view: View) {
+        if (transactionAdapter.itemCount == 0) {
+            rcy_budget.visibility = View.GONE
+            empty_image.visibility = View.VISIBLE
+        }else{
+            rcy_budget.visibility = View.VISIBLE
+            empty_image.visibility = View.GONE
 
+        }
+
+    }*/
     private fun showSnackBar(){
         val view = findViewById<View>(R.id.coordinator)
         val snackBar = Snackbar.make(view, "Transaction deleted!",Snackbar.LENGTH_LONG)

@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mymoney.Room.Transaction
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.transaction_layout.view.*
 
 class TransactionAdapter(private var transaction:List<Transaction>):
@@ -23,8 +26,11 @@ class TransactionAdapter(private var transaction:List<Transaction>):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {
         //inflate transaction
         val view:View = LayoutInflater.from(parent.context).inflate(R.layout.transaction_layout,parent,false)
+
         return TransactionViewHolder(view)
     }
+
+
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
         val transaction: Transaction = transaction[position]
@@ -47,7 +53,6 @@ class TransactionAdapter(private var transaction:List<Transaction>):
 
     override fun getItemCount(): Int {
         return  transaction.size
-
     }
 
     fun setData(transaction: List<Transaction>){

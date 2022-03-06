@@ -13,11 +13,7 @@
         android:theme="@style/Theme.MyMoney">
         <activity android:name=".ReminderActivity"
             android:label="@string/reminder">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity android:name=".DetailsActivity" />
         <activity android:name=".AddTransactionActivity" />
@@ -26,8 +22,15 @@
 
         </activity>
         <activity android:name=".login.LogInActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".login.RegisterActivity" />
+        <receiver android:name=".AlarmReceiver"/>
     </application>
 
 </manifest>
