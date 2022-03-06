@@ -186,7 +186,7 @@
             android:layout_marginBottom="10dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:background="@drawable/savemoney"/>
+            />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_btn"
